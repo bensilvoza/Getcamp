@@ -20,7 +20,9 @@ app.use(methodOverride("_method"));
 app.use(flash());
 
 //database
-mongoose.connect("mongodb://localhost/getcampDB", {useNewUrlParser: true, useUnifiedTopology: true});
+// mongoose.connect("mongodb://localhost/getcampDB", {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect("mongodb+srv://chris:...4433mongodb@cluster0-08ep0.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true});
+
 //notes for database
   //Embedding data - inserting entire content
   //Referencing data - inserting _id only, but that _id is somehow consist of entire content
