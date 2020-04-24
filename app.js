@@ -19,9 +19,12 @@ app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
 
+
 //database
-// mongoose.connect("mongodb://localhost/getcampDB", {useNewUrlParser: true, useUnifiedTopology: true});
-mongoose.connect("mongodb+srv://chris:...4433mongodb@cluster0-08ep0.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true});
+
+var url = process.env.DATABASEURL || "mongodb://localhost/getcampDB"
+mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true});
+
 
 //notes for database
   //Embedding data - inserting entire content
