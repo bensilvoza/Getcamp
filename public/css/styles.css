@@ -1,0 +1,92 @@
+/* media queries */
+  /* will be added soon */
+
+
+/* camp-index */
+.c-i-banner {
+	margin-top: 100px;
+}
+
+.c-i-form {
+	display: flex;
+	margin-bottom: 100px;
+}
+
+.c-i-search {
+	border: 2px solid gray;
+    border-radius: 3px;
+    height: 50px;
+    width: 400px;
+}
+
+.c-i-search-btn {
+	height: 50px;
+    width: 150px;
+    background-color: #2398AB;
+    border-radius: 5px;
+	border-style: none;
+	color: white;
+	margin-left: 10px;
+}
+
+.c-i-message {
+	font-size: 1.1rem;
+}
+
+.c-i-border-desc {
+	border: 5px dotted gray;
+	margin-top: 60px;
+	margin-bottom: 100px;
+}
+
+.c-i-heading-desc {
+	margin-top: 20px;
+}
+
+.c-i-img-desc {
+	padding-top: 64px;
+}
+
+.c-i-trademark {
+	color: lightgray;
+}
+
+
+
+/* camp-new */
+.c-n-margin {
+	margin-top: 50px;
+}
+
+
+/* camp-show */
+.c-s-margin {
+	margin-top: 50px;
+}
+
+.c-s-form-delete {
+	display: inline-block;
+}
+
+.c-s-comment-delete {
+	display: inline-block;
+}
+
+
+/* camp-edit */
+.c-e-margin {
+	margin-top: 50px;
+}
+
+
+/* comment-new */
+.c-n-margin {
+	margin-top: 50px;
+}
+
+
+/* auth-register */
+.a-r-margin {
+	margin-top: 50px;
+}
+

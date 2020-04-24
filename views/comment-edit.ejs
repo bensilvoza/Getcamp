@@ -1,0 +1,18 @@
+<%- include("partials/header"); -%>
+
+<div class="container">
+   <div class="row">
+     <div class="col-xs-8 col-sm-8 col-md-5 m-auto">
+		   <h1 class="c-n-margin">Edit a comment</h1>
+			<form action="/camps/<%=camp%>/comments/<%=comment["_id"]%>?_method=put" method="post">
+				<div class="form-group">
+      			  <input class="form-control form-control-lg" type="text" name="text" value="<%=comment["text"]%>">
+                </div>
+            <button class="btn btn-lg btn-outline-info btn-block" type="submit">Submit</button>
+      		</form>
+     </div>
+   </div>
+</div>
+
+
+<%- include("partials/footer"); -%>

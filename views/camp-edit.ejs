@@ -1,0 +1,25 @@
+<%- include("partials/header"); -%>
+
+<div class="container">
+   <div class="row">
+     <div class="col-md-5 m-auto">
+		 <h1 class="c-e-margin">Edit Camping cabin</h1>
+      		<form action="/camps/<%=camp["_id"]%>?_method=put" method="post">
+				<div class="form-group">
+      			  <input class="form-control form-control-lg" type="text" name="image" value="<%=camp["image"]%>">
+                </div>
+				<div class="form-group">
+      			  <input class="form-control form-control-lg" type="text" name="name" value="<%=camp["name"]%>">
+                </div>
+				<div class="form-group">
+      			  <input class="form-control form-control-lg" type="text" name="body" value="<%=camp["body"]%>">
+                </div>
+            <button class="btn btn-lg btn-outline-info btn-block" type="submit">Submit!</button>
+      		</form>
+          <a href="/camps">Go back</a>
+     </div>
+   </div>
+</div>
+
+
+<%- include("partials/footer"); -%>

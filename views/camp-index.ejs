@@ -1,0 +1,64 @@
+<%- include("partials/header"); -%>
+
+<div class="container">
+	
+	<!-- banner -->
+	<div class="row">
+		<div class="col-xs-6 col-sm-6 col-md-5">
+			<h1 class="c-i-banner">Find Yourself Outside.</h1>
+			<p class="c-i-message">Spend your next short or long term camping trip at Getcamp! Make your reservation for this adventure.</p>
+			<p class="c-i-message">Or add a new camping cabin <a href="/camps/new">here</a>!</p>
+		</div>
+	</div>
+	
+	<!-- search camping cabin -->
+	<div class="row">
+		<div class="col-xs-7 col-sm-7 col-md-7">
+			<form class="c-i-form" action="/cabin/search" method="get">
+      			<input class="c-i-search" type="text" name="cabin" placeholder="try search 'Normandy farms'">
+            <input class="c-i-search-btn" type="submit" value="Search">
+      		</form>
+		</div>
+	</div>
+	
+	
+	<h5>Featured Camping Cabin</h5>
+	<!-- all camping cabin -->
+	<div class="row">
+		
+		<%for (var i = 0; i < camps.length; i++){%>
+		   <div class="col-md-4">
+			   <div class="card">
+				  <img src="<%=camps[i]["image"]%>" class="card-img-top" alt="camping cabin">
+				  <div class="card-body text-center">
+					<h5 class="card-title"><%=camps[i]["name"]%></h5>
+					<a href="/camps/<%=camps[i]["_id"]%>" class="btn btn-info">more info</a>
+				  </div>
+				</div>
+			</div>
+		<%}%>
+	</div>
+	
+	
+	
+	<!-- camping cabin description -->
+	<div class="row c-i-border-desc">
+		<div class="col-md-6">
+			<h3 class="c-i-heading-desc">Benefits of cabin camping</h3>
+			<p class="c-i-message">Camping truly is for everyone, from your oldest family member to little campers just trekking out for the first time. Whether your plan is to relax, explore or reconnect, Getcamp are the great place to create memories with those you love.</p>  
+			<p class="c-i-message">Here are just a few of the reasons we believe so many people love camping:</p>
+			<p class="c-i-message">Making memories: Camping is sure to be an experience your family will never forget. From a day spent exploring everything your campground has to offer to an evening roasting s'mores around the campfire, these memories will last forever.. Plus, the chance to learn new skills and experience new things keeps us all young at heart!</p>
+		</div>
+		<div class="col-md-6 c-i-img-desc">
+			<img class="img-fluid" src="https://media-cdn.tripadvisor.com/media/photo-m/1280/13/bc/bd/45/rustic-camping-cabins.jpg">
+		</div>
+	</div>
+	
+	
+	<!-- trademark -->
+	<h5 class="c-i-trademark">Trademark Getcamp 2020. All Rights Reserved</h5>
+	
+	
+</div>
+
+<%- include("partials/footer"); -%>

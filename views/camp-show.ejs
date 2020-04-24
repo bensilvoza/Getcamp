@@ -1,0 +1,69 @@
+<%- include("partials/header"); -%>
+
+<div class="container">
+	
+  <div class="row c-s-margin">
+	  
+	<!-- sidebar info -->  
+    <div class="col-md-3">
+      <div class="list-group">
+        <li class="list-group-item active">Info 1</li>
+        <li class="list-group-item">Info 2</li>
+        <li class="list-group-item">Info 3</li>
+      </div>
+    </div>
+	  
+	<!-- show camping cabin   -->
+    <div class="col-md-9">
+		<div class="card">
+		  <img src="<%=camp["image"]%>" class="card-img-top" alt="camping cabin">
+		  <div class="card-body">
+			<h5 class="card-title"><%=camp["name"]%></h5>
+			<p class="card-text"><%=camp["body"]%></p>
+			<p>Camping cabin is submitted by:  <%=camp["author"]["username"]%></p>
+			<br>
+			  
+			<!-- if he/she owns the camp cabin be able to edit or delete -->
+		    <%if (currentUser && camp.author.id.equals(currentUser._id)){%>
+				<a class="btn btn-outline-info btn-sm" href="/camps/<%=camp["_id"]%>/edit">Edit</a>
+				<form class="c-s-form-delete" id="delete-form" action="/camps/<%=camp["_id"]%>?_method=delete" method="post">
+				  <input class="btn btn-outline-danger btn-sm" type="submit" value="Delete">
+				</form>
+           <%}%>
+			  
+		  </div>
+		</div>
+		
+		
+		
+		<!-- add comment link -->
+		<div class="card bg-light mt-5 mb-5">
+		 <div class="card-body">
+          <div class="text-right">
+            <a class="btn btn-outline-info" href="/camps/<%=camp["_id"]%>/comments/new">Add comment here</a>
+          </div>
+          <hr>
+			<!-- show all comments -->
+		    <%for (var i = 0; i < camp["comments"].length; i++){%>
+              <p><strong><%=camp["comments"][i]["author"]["username"]%></strong> - <%=camp["comments"][i]["text"]%></p>
+			
+			<!-- checking if he/she owns the comment  -->
+            <%if (currentUser && camp["comments"][i]["author"]["id"].equals(currentUser._id)){%>
+            <a class="btn btn-outline-info btn-sm" href="/camps/<%=camp["_id"]%>/comments/<%=camp["comments"][i]["_id"]%>/edit">edit</a>
+            <form class="c-s-comment-delete" action="/camps/<%=camp["_id"]%>/comments/<%=camp["comments"][i]["_id"]%>?_method=delete" method="post">
+              <input class="btn btn-outline-danger btn-sm" type="submit" value="Delete">
+            </form>
+            <%}%>
+          <%}%>	
+			
+			</div>
+        </div>
+		
+		
+		
+			
+        </div>
+	  </div>
+
+
+<%- include("partials/footer"); -%>
